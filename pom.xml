@@ -20,7 +20,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx256m
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx1024m
                     </argLine>
                         <suiteXmlFiles>
                             <suiteXmlFile>src/test/resources/parallel-run.xml</suiteXmlFile>
@@ -39,7 +39,7 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.9.6</version>
+            <version>1.9.9.1</version>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
@@ -94,7 +94,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.1.1</version>
-            <!--<scope>test</scope>-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
@@ -102,17 +101,6 @@
             <artifactId>gson</artifactId>
             <version>2.9.0</version>
         </dependency>
-        <!--<dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>5.1.1</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.6.0</version>
-            <scope>compile</scope>
-        </dependency>-->
+
     </dependencies>
 </project>
