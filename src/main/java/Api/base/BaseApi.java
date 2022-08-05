@@ -6,7 +6,6 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.core.IsEqual.equalTo;
 import static utils.PropertyReader.getBaseUrlApi;
 import static utils.PropertyReader.getToken;
 
@@ -26,37 +25,14 @@ public class BaseApi {
                         log().all();
         }
 
-    protected Response get(String uri, int statusCode, String field, String value) {
+    protected Response get(String uri, int statusCode) {
         return requestSpecification.
                 when().
                         get(getBaseUrlApi() + uri).
                 then().
                         log().all().
                         statusCode(statusCode).
-                        body(field, equalTo(value)).
                         extract().response();
-    }
-
-    protected Response get(String uri, int statusCode, String field, int value) {
-        return requestSpecification.
-                when().
-                        get(getBaseUrlApi() + uri).
-                then().
-                        log().all().
-                        statusCode(statusCode).
-                        body(field, equalTo(value)).
-                extract().response();
-    }
-
-    protected Response get(String uri, int statusCode, String field, boolean value) {
-        return requestSpecification.
-                when().
-                        get(getBaseUrlApi() + uri).
-                then().
-                        log().all().
-                        statusCode(statusCode).
-                        body(field, equalTo(value)).
-                extract().response();
     }
 
     protected Response post(String body, String uri, int statusCode) {

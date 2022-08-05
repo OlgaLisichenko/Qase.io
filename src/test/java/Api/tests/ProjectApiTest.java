@@ -2,8 +2,12 @@ package Api.tests;
 
 import Api.base.BaseApiTest;
 import Api.dto.project.Project;
+import Api.dto.project.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestConstants;
+
+import java.io.FileNotFoundException;
 
 public class ProjectApiTest extends BaseApiTest implements TestConstants {
 
@@ -20,14 +24,16 @@ public class ProjectApiTest extends BaseApiTest implements TestConstants {
                 build();
 
         projectApi.createProject(project);
+        Assert.assertEquals(project.getCode(), PROJECT_CODE);
     }
 
     /**
      * Checking the retrieve of a specific project by code
      */
     @Test(priority = 2)
-    public void getProjectByCodeTest() {
-        projectApi.getProjectByCode(PROJECT_CODE);
+    public void getProjectByCodeTest() throws FileNotFoundException {
+        var project = projectApi.getProjectByCode(PROJECT_CODE);
+        Assert.assertEquals(project, projectApi.expectedProject);
     }
 
     /**
@@ -35,6 +41,7 @@ public class ProjectApiTest extends BaseApiTest implements TestConstants {
      */
     @Test(priority = 3)
     public void deleteProjectByCodeTest() {
-        projectApi.deleteProject(PROJECT_CODE);
+        Response response = projectApi.deleteProject(PROJECT_CODE);
+        Assert.assertTrue(response.isStatus());
     }
 }

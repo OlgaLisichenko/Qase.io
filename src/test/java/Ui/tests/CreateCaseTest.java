@@ -3,6 +3,8 @@ package Ui.tests;
 import Ui.base.BaseTest;
 import org.testng.annotations.Test;
 
+import static utils.NewCaseData.newCase;
+
 public class CreateCaseTest extends BaseTest {
 
     /**
@@ -10,11 +12,12 @@ public class CreateCaseTest extends BaseTest {
      */
     @Test
     public void createCaseTest() {
+
         loginPage.loginWithCorrectUser();
         projectCreationPageSteps.createNewProject();
 
-        newCaseSteps.createTestCase().
-                     checkCreatingOfTestCase();
+        newCaseSteps.createTestCase()
+                    .checkCreatingOfTestCase(newCase.getTitle());
 
         createdRepositoryPage.deleteCreatedProject();
     }

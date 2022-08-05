@@ -1,13 +1,14 @@
 package Api.dto.project;
 
+import com.google.gson.annotations.Expose;
 import lombok.Data;
-
-import java.util.ArrayList;
 
 @Data
 public class Result {
-    int total;
-    int filtered;
-    int count;
-    ArrayList<Project> entities;
+    @Expose
+    String title;
+    @Expose
+    String code;
+    @Expose
+    Counts counts;
 }

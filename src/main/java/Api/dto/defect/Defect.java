@@ -1,6 +1,7 @@
 package Api.dto.defect;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,7 +9,8 @@ import lombok.Data;
 @Builder
 public class Defect {
     @Expose
-    String actual_result;
+    @SerializedName("actual_result")
+    String actualResult;
     @Expose
     int severity;
     @Expose

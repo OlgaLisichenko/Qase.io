@@ -1,10 +1,14 @@
 package Api.dto.run;
 
-import Api.dto.project.Result;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 @Data
 public class ListRuns {
+    @Expose
     boolean status;
-    Result result;
+    @Expose
+    @SerializedName("result")
+    Results results;
 }

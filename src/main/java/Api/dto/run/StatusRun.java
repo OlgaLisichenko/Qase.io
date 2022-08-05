@@ -4,11 +4,9 @@ import com.google.gson.annotations.Expose;
 import lombok.Data;
 
 @Data
-public class Result {
+public class StatusRun {
     @Expose
-    int id;
+    boolean status;
     @Expose
-    String title;
-    @Expose
-    String description;
+    Result result;
 }

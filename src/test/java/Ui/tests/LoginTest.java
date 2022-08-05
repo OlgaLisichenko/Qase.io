@@ -25,6 +25,6 @@ public class LoginTest extends BaseTest implements TestData {
     @Test(dataProvider = "Incorrect data")
     public void failedLoginTest(String username, String password) {
         loginPage.login(username, password);
-        webdriver().shouldHave(url(getBaseUrl() + getLoginUri()));
+        webdriver().shouldHave(url(getBaseUrl()));
     }
 }

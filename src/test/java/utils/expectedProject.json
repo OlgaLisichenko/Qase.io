@@ -1,0 +1,21 @@
+
+{
+  "status": true,
+  "result": {
+    "title": "AT_NewProject",
+    "code": "NP1",
+    "counts": {
+      "cases": 0,
+      "suites": 0,
+      "milestones": 0,
+      "runs": {
+        "total": 0,
+        "active": 0
+      },
+      "defects": {
+        "total": 0,
+        "open": 0
+      }
+    }
+  }
+}

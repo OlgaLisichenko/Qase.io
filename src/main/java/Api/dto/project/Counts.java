@@ -1,10 +1,18 @@
 package Api.dto.project;
 
-import lombok.AllArgsConstructor;
+import com.google.gson.annotations.Expose;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class Counts {
+    @Expose
     int cases;
+    @Expose
+    int suites;
+    @Expose
+    int milestones;
+    @Expose
+    Runs runs;
+    @Expose
+    Defects defects;
 }

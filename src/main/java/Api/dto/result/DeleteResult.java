@@ -4,9 +4,7 @@ import com.google.gson.annotations.Expose;
 import lombok.Data;
 
 @Data
-public class Status {
+public class DeleteResult {
     @Expose
-    boolean status;
-    @Expose
-    Result result;
+    String hash;
 }

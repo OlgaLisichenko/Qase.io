@@ -1,12 +1,12 @@
-package Api.dto.defect;
+package Api.dto.project;
 
 import com.google.gson.annotations.Expose;
 import lombok.Data;
 
 @Data
-public class Status {
+public class Defects {
     @Expose
-    boolean status;
+    int total;
     @Expose
-    ResultDefect result;
+    int open;
 }

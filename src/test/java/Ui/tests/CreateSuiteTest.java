@@ -3,6 +3,8 @@ package Ui.tests;
 import Ui.base.BaseTest;
 import org.testng.annotations.Test;
 
+import static utils.NewSuiteData.newSuite;
+
 public class CreateSuiteTest extends BaseTest {
 
     /**
@@ -15,7 +17,7 @@ public class CreateSuiteTest extends BaseTest {
         projectCreationPageSteps.createNewProject();
 
         newSuiteSteps.createTestSuite()
-                     .checkCreatingOfTestSuite();
+                     .checkCreatingOfTestSuite(newSuite.getSuiteName());
 
         createdRepositoryPage.deleteCreatedProject();
     }

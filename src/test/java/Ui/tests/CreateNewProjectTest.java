@@ -14,6 +14,8 @@ public class CreateNewProjectTest extends BaseTest {
         projectCreationPageSteps.createNewProject();
 
         projectCreationPageSteps.checkCreatedProject();
+
+        projectCreationPageSteps.deleteProject();
     }
 
     /**
@@ -22,8 +24,12 @@ public class CreateNewProjectTest extends BaseTest {
     @Test
     public void deleteNewProjectTest() {
         loginPage.loginWithCorrectUser();
-        projectCreationPageSteps.createNewProject();
 
-        projectCreationPageSteps.checkProjectDeletion();
+        int expectedSize = projectCreationPageSteps.getInitialListSize();
+
+        projectCreationPageSteps.createNewProject();
+        createdRepositoryPage.deleteCreatedProject();
+
+        projectCreationPageSteps.checkProjectDeletion(expectedSize);
     }
 }

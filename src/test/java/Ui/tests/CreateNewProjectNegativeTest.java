@@ -14,7 +14,7 @@ public class CreateNewProjectNegativeTest extends BaseTest implements TestConsta
     @Test
     public void createNewProjectWithIncorrectCodeTest() {
         loginPage.loginWithCorrectUser();
-        projectCreationPageSteps.createNewProjectWithData(faker.name().title(), faker.code().isbnRegistrant());
+        projectCreationPageSteps.createNewProjectWithData("AT_" + faker.name().title(), "AT_" + faker.code().isbnRegistrant());
 
         newProjectPage.errorMessage.shouldHave(exactText("The code format is invalid."));
     }
@@ -26,7 +26,7 @@ public class CreateNewProjectNegativeTest extends BaseTest implements TestConsta
     @Test
     public void createNewProjectWithOneCharacterCodeTest() {
         loginPage.loginWithCorrectUser();
-        projectCreationPageSteps.createNewProjectWithData(faker.name().title(), faker.code().isbnGroup());
+        projectCreationPageSteps.createNewProjectWithData("AT_" + faker.name().title(), faker.code().isbnGroup());
 
         newProjectPage.errorMessage.shouldHave(exactText("The code must be at least 2 characters."));
     }
@@ -37,7 +37,7 @@ public class CreateNewProjectNegativeTest extends BaseTest implements TestConsta
     @Test
     public void createNewProjectWithSameCodeTest() {
         loginPage.loginWithCorrectUser();
-        projectCreationPageSteps.createNewProjectWithData(faker.name().title(), INCORRECT_CODE);
+        projectCreationPageSteps.createNewProjectWithData("AT_" + faker.name().title(), INCORRECT_CODE);
 
         newProjectPage.errorMessage.shouldHave(exactText("The selected project code is already in use."));
     }

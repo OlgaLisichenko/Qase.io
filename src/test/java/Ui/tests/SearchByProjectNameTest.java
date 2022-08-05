@@ -2,20 +2,23 @@ package Ui.tests;
 
 import org.testng.annotations.Test;
 import Ui.base.BaseTest;
+import utils.Retry;
 
 public class SearchByProjectNameTest extends BaseTest {
 
     /**
      * Checking the ability to search for an existing project by Project name
      */
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void searchByProjectNameTest() {
-        String nameProject = faker.name().title();
+        String nameProject = "AT_" + faker.name().title();
 
         loginPage.loginWithCorrectUser();
         projectCreationPageSteps.createNewProjectWithData(nameProject, faker.code().asin());
 
         searchByProjectNameSteps.checkSearchProjectByName(nameProject);
+
+        searchByProjectNameSteps.deleteProject(nameProject);
     }
 
     /**
@@ -23,7 +26,7 @@ public class SearchByProjectNameTest extends BaseTest {
      */
     @Test
     public void searchByProjectNameNegativeTest() {
-        String nameProject = faker.name().title();
+        String nameProject = "AT_" + faker.name().title();
 
         loginPage.loginWithCorrectUser();
         projectCreationPageSteps.createNewProjectWithData(nameProject, faker.code().asin());

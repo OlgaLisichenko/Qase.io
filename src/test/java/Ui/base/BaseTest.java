@@ -55,8 +55,8 @@ public class BaseTest {
         faker = new Faker(new Locale("en-US"));
     }
 
-    @AfterMethod(alwaysRun=true, description = "Closing Browser")
-    public void closeBrowser(){
+    @AfterMethod(alwaysRun = true, description = "Closing Browser")
+    public void closeBrowser() {
         closeWebDriver();
     }
 }

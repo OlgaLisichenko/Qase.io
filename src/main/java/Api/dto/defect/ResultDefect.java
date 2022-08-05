@@ -1,18 +1,18 @@
-package Api.dto.result;
+package Api.dto.defect;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 @Data
-public class Result {
+public class ResultDefect {
     @Expose
-    String hash;
+    int id;
     @Expose
-    String comment;
+    String title;
     @Expose
-    String stacktrace;
+    @SerializedName("actual_result")
+    String actualResult;
     @Expose
-    @SerializedName("run_id")
-    int runId;
+    String status;
 }

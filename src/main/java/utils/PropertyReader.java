@@ -28,10 +28,6 @@ public class PropertyReader {
         return properties.getProperty("base.url");
     }
 
-    public static String getLoginUri() {
-        return properties.getProperty("login.uri");
-    }
-
     public static String getProjectsPageUrl() {
         return properties.getProperty("projectsPage.url");
     }
