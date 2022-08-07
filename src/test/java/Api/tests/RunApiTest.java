@@ -2,6 +2,7 @@ package Api.tests;
 
 import Api.base.BaseApiTest;
 import Api.dto.run.Run;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestConstants;
@@ -13,6 +14,7 @@ public class RunApiTest extends BaseApiTest implements TestConstants {
      * retrieve, deletion the run from the repository by ID
      */
     @Test(priority = 1)
+    @TmsLink("ATQI-17")
     public void createRunScenarioTest() {
         Run run = Run.builder().
                 title(RUN_TITLE).
@@ -33,6 +35,7 @@ public class RunApiTest extends BaseApiTest implements TestConstants {
      * Checking the retrieve of all runs stored in selected project
      */
     @Test(priority = 2)
+    @TmsLink("ATQI-18")
     public void getAllRunsTest() {
         var results = runApi.getAllRuns(RUN_CODE);
 
@@ -43,6 +46,7 @@ public class RunApiTest extends BaseApiTest implements TestConstants {
      * Checking the deletion a run from repository with incorrect ID Identifier
      */
     @Test
+    @TmsLink("ATQI-19")
     public void deleteRunTestWithError() {
         runApi.deleteRunWithError(RUN_CODE, RUN_ID);
     }

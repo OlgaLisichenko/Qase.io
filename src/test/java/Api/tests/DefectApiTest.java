@@ -3,6 +3,7 @@ package Api.tests;
 import Api.base.BaseApiTest;
 import Api.dto.defect.Defect;
 import Api.dto.defect.UpdateDefect;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestConstants;
@@ -13,6 +14,7 @@ public class DefectApiTest extends BaseApiTest implements TestConstants {
      * Checking the creation of a defect in selected project
      */
     @Test(priority = 1)
+    @TmsLink("ATQI-21")
     public void createDefectTest() {
         Defect defect = Defect.
                 builder().
@@ -29,6 +31,7 @@ public class DefectApiTest extends BaseApiTest implements TestConstants {
      * Checking the retrieve of a specific defect by code and ID
      */
     @Test(priority = 2)
+    @TmsLink("ATQI-22")
     public void getSpecificDefectTest() {
         var result = defectApi.getSpecificDefect(DEFECT_CODE, DEFECT_ID);
 
@@ -39,6 +42,7 @@ public class DefectApiTest extends BaseApiTest implements TestConstants {
      * Checking the retrieve of all defects by code
      */
     @Test
+    @TmsLink("ATQI-23")
     public void getAllDefectTest() {
         var results = defectApi.getAllDefectTest(DEFECT_CODE);
 
@@ -49,6 +53,7 @@ public class DefectApiTest extends BaseApiTest implements TestConstants {
      * Checking the updating of a defect in selected project
      */
     @Test(priority = 3)
+    @TmsLink("ATQI-24")
     public void updateDefectTest() {
         UpdateDefect updateDefect = UpdateDefect.
                 builder().

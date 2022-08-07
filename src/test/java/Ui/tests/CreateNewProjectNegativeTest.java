@@ -1,6 +1,7 @@
 package Ui.tests;
 
 import Ui.base.BaseTest;
+import io.qameta.allure.TmsLink;
 import org.testng.annotations.Test;
 import utils.TestConstants;
 
@@ -12,6 +13,7 @@ public class CreateNewProjectNegativeTest extends BaseTest implements TestConsta
      * Checking the possibility of creating a new project with filling in the "Project Code" field with invalid data
      */
     @Test
+    @TmsLink("ATQI-5")
     public void createNewProjectWithIncorrectCodeTest() {
         loginPage.loginWithCorrectUser();
         projectCreationPageSteps.createNewProjectWithData("AT_" + faker.name().title(), "AT_" + faker.code().isbnRegistrant());
@@ -24,6 +26,7 @@ public class CreateNewProjectNegativeTest extends BaseTest implements TestConsta
      * containing less than two characters
      */
     @Test
+    @TmsLink("ATQI-6")
     public void createNewProjectWithOneCharacterCodeTest() {
         loginPage.loginWithCorrectUser();
         projectCreationPageSteps.createNewProjectWithData("AT_" + faker.name().title(), faker.code().isbnGroup());
@@ -35,6 +38,7 @@ public class CreateNewProjectNegativeTest extends BaseTest implements TestConsta
      * Checking the possibility of creating a new project by filling in the "Project Code" field with an existing code
      */
     @Test
+    @TmsLink("ATQI-7")
     public void createNewProjectWithSameCodeTest() {
         loginPage.loginWithCorrectUser();
         projectCreationPageSteps.createNewProjectWithData("AT_" + faker.name().title(), INCORRECT_CODE);

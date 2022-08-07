@@ -4,6 +4,7 @@ import Api.base.BaseApiTest;
 import Api.dto.result.Case;
 import Api.dto.result.DeleteStatus;
 import Api.dto.result.RunResult;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestConstants;
@@ -15,6 +16,7 @@ public class ResultApiTest extends BaseApiTest implements TestConstants {
      * retrieve, deletion the run result from the repository by ID
      */
     @Test
+    @TmsLink("ATQI-20")
     public void createRunResultScenarioTest() {
 
         RunResult runResult = RunResult.

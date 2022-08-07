@@ -3,6 +3,7 @@ package Ui.pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
+import utils.AllureUtils;
 
 import static com.codeborne.selenide.Selenide.$;
 import static utils.PropertyReader.getProjectsPageUrl;
@@ -24,5 +25,6 @@ public class CreatedRepositoryPage {
         deleteProjectButton.click();
         log.info("Delete the project and navigate to {}", getProjectsPageUrl());
         deleteProjectButton.click();
+        AllureUtils.screenshot();
     }
 }

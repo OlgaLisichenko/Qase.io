@@ -4,6 +4,7 @@ import Ui.pages.CreatedRepositoryPage;
 import Ui.pages.NewSuiteModal;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
+import utils.AllureUtils;
 import utils.NewSuiteData;
 
 import static com.codeborne.selenide.Condition.exactText;
@@ -19,6 +20,7 @@ public class NewSuiteSteps implements NewSuiteData {
         createdRepositoryPage.suiteButton.click();
         newSuiteModal.createSuite(newSuite);
         newSuiteModal.createButton.click();
+        AllureUtils.screenshot();
         return this;
     }
 

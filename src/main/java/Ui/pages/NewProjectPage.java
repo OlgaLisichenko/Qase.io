@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
+import utils.AllureUtils;
 
 import java.util.Locale;
 
@@ -30,6 +31,7 @@ public class NewProjectPage {
         codeProjectInput.sendKeys(faker.code().asin());
         log.info("Navigate to created repository page");
         createProjectButton.click();
+        AllureUtils.screenshot();
     }
 
     @Step("Creating a new project with project name '{nameProject}' and code '{code}'")
@@ -41,5 +43,6 @@ public class NewProjectPage {
         codeProjectInput.sendKeys(code);
         log.info("Navigate to created repository page");
         createProjectButton.click();
+        AllureUtils.screenshot();
     }
 }
