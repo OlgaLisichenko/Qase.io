@@ -1,6 +1,5 @@
 ## *[Qase.io](https://app.qase.io/login)* it is an all-in-one test management solution. It includes test case management, defect management, test plans, test runs with informative reports, rich API, and webhooks.
-***
-##The following has been applied in this project:
+## The following has been applied in this project:
 1. Maven
 2. TestNG with Retry, TestListener, Data Provider and running in parallel in multiple browsers
 3. Selenide
@@ -11,9 +10,7 @@
 8. Logging
 ***
 ## [Checklist](https://app.qase.io/project/ATQI) of tests
-***
 ## UI tests
-***
 1. ***Login page tests***
     1. Checking the possibility of login with valid credentials [link](https://app.qase.io/case/ATQI-1);
     2. Checking the possibility of login with invalid credentials [link](https://app.qase.io/case/ATQI-2).
@@ -46,7 +43,6 @@
     2. Search for cases in the project [link](https://app.qase.io/case/ATQI-13).
 ***
 ## API tests
-***
 1. ***Projects tests***
     1. Checking the creating of a new project through API [link](https://app.qase.io/case/ATQI-14);
     2. Checking the retrieve of a specific project by code [link](https://app.qase.io/case/ATQI-15);
