@@ -3,6 +3,7 @@ package Ui.tests;
 import Ui.base.BaseTest;
 import io.qameta.allure.TmsLink;
 import org.testng.annotations.Test;
+import utils.Retry;
 
 public class CreateNewProjectTest extends BaseTest {
 
@@ -23,7 +24,7 @@ public class CreateNewProjectTest extends BaseTest {
     /**
      * Checking the possibility of deleting a created project
      */
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     @TmsLink("ATQI-4")
     public void deleteNewProjectTest() {
         loginPage.loginWithCorrectUser();
